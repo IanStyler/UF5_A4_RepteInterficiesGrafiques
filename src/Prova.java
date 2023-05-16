@@ -37,6 +37,16 @@ public class Prova {
             }
         });
 
+        binariAdecimal.addActionListener(e -> {
+            String binStr = binariAdecimal.getText();
+            try {
+                int dec = Integer.parseInt(binStr, 2);
+                resultatBinariDecimal.setText("Numero en decimal: " + dec);
+            } catch (NumberFormatException ex) {
+                resultatBinariDecimal.setText("Numero binari no vàlid!");
+            }
+        });
+
         frame.add(panel);
         frame.pack();
         frame.setVisible(true);
